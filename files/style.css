@@ -1,0 +1,170 @@
+/* MoCI add-on: adblock-fast. Scoped styles layered on MoCI's glass theme. */
+
+#addon-adblock-fast-page .adbf-loading {
+	padding: 2rem;
+	text-align: center;
+	color: var(--steel-muted, #6b7b8d);
+	font-family: var(--font-mono, monospace);
+}
+
+#addon-adblock-fast-page .adbf-muted {
+	color: var(--steel-muted, #6b7b8d);
+	font-size: 0.85rem;
+}
+
+#addon-adblock-fast-page .adbf-status-line {
+	font-family: var(--font-mono, monospace);
+	font-size: 1rem;
+	color: var(--text-primary, #fff);
+}
+
+/* LuCI-style label/value rows for the status card (no heading/divider). */
+#addon-adblock-fast-page .adbf-row {
+	display: flex;
+	gap: 1rem;
+	align-items: flex-start;
+	padding: 0.4rem 0;
+}
+
+#addon-adblock-fast-page .adbf-row-label {
+	flex: 0 0 200px;
+	font-family: var(--font-mono, monospace);
+	font-weight: 700;
+	font-size: 0.85rem;
+	color: var(--starship-steel, #8b9bad);
+	padding-top: 0.15rem;
+}
+
+#addon-adblock-fast-page .adbf-row-value {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+@media (max-width: 600px) {
+	#addon-adblock-fast-page .adbf-row {
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+	#addon-adblock-fast-page .adbf-row-label {
+		flex-basis: auto;
+	}
+}
+
+#addon-adblock-fast-page .adbf-warn,
+#addon-adblock-fast-page .adbf-err {
+	font-size: 0.85rem;
+	line-height: 1.5;
+	padding: 0.6rem 0.8rem;
+	border-radius: 8px;
+	margin: 0.5rem 0;
+}
+
+#addon-adblock-fast-page .adbf-warn {
+	color: var(--warning-amber, #f59e0b);
+	border: 1px solid var(--warning-amber, #f59e0b);
+	background: rgba(245, 158, 11, 0.08);
+}
+
+#addon-adblock-fast-page .adbf-err {
+	color: var(--alert-red, #ef4444);
+	border: 1px solid var(--alert-red, #ef4444);
+	background: rgba(239, 68, 68, 0.08);
+}
+
+#addon-adblock-fast-page .adbf-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+/* Horizontal separator between the service-action group (start/dl/pause/stop)
+   and the service-state group (enable/disable) — spacing, not a line break. */
+#addon-adblock-fast-page .adbf-btn-gap {
+	width: 1.5rem;
+}
+
+#addon-adblock-fast-page .adbf-section-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+#addon-adblock-fast-page .adbf-descr {
+	margin-top: 0.35rem;
+	font-size: 0.78rem;
+	color: var(--steel-muted, #6b7b8d);
+	line-height: 1.4;
+}
+
+#addon-adblock-fast-page .adbf-descr a,
+#addon-adblock-fast-page .adbf-err a,
+#addon-adblock-fast-page .adbf-muted a {
+	color: var(--primary-accent, #06b6d4);
+}
+
+#addon-adblock-fast-page .adbf-textarea {
+	min-height: 140px;
+	resize: vertical;
+	font-family: var(--font-mono, monospace);
+	white-space: pre;
+}
+
+#addon-adblock-fast-page .adbf-multi {
+	min-height: 96px;
+}
+
+#addon-adblock-fast-page .adbf-save-row {
+	margin-top: 1rem;
+}
+
+#addon-adblock-fast-page .adbf-log-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 0.5rem;
+}
+
+#addon-adblock-fast-page .adbf-log-state {
+	font-weight: 700;
+}
+
+#addon-adblock-fast-page .adbf-log-state.on {
+	color: var(--success-green, #22c55e);
+}
+
+#addon-adblock-fast-page .adbf-querylog {
+	min-height: 60vh;
+	max-height: 85vh;
+	width: 100%;
+	padding: 5px;
+	font-family: var(--font-mono, monospace);
+	font-size: 12px;
+	resize: vertical;
+	white-space: pre;
+}
+
+#addon-adblock-fast-page .adbf-missing h2 {
+	color: var(--warning-amber, #f59e0b);
+}
+
+#addon-adblock-fast-page .adbf-cmd,
+#addon-adblock-fast-page .adbf-missing pre {
+	font-family: var(--font-mono, monospace);
+	background: var(--glass-bg, rgba(255, 255, 255, 0.04));
+	border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.08));
+	border-radius: 6px;
+	padding: 0.5rem 0.75rem;
+	overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+	#addon-adblock-fast-page .adbf-log-head {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}

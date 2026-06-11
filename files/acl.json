@@ -1,0 +1,49 @@
+{
+	"moci-addon-adblock-fast": {
+		"description": "MoCI add-on AdBlock-Fast: control the adblock-fast service and edit its config",
+		"read": {
+			"file": {
+				"/dev/shm/adblock-fast": [ "list", "read" ],
+				"/dev/shm/adblock-fast.status.json": [ "list", "read" ]
+			},
+			"ubus": {
+				"moci.adblock-fast": [
+					"getFileUrlFilesizes",
+					"getInitList",
+					"getInitStatus",
+					"getCronStatus",
+					"getCronEntry",
+					"getPlatformSupport",
+					"getQueryLogStatus"
+				],
+				"log": [
+					"read"
+				],
+				"service": [
+					"list"
+				]
+			},
+			"uci": [
+				"adblock-fast",
+				"dhcp",
+				"smartdns",
+				"unbound"
+			]
+		},
+		"write": {
+			"uci": [
+				"adblock-fast",
+				"dhcp",
+				"smartdns",
+				"unbound"
+			],
+			"ubus": {
+				"moci.adblock-fast": [
+					"syncCron",
+					"setInitAction",
+					"setQueryLog"
+				]
+			}
+		}
+	}
+}

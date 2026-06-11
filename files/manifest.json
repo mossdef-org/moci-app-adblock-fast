@@ -1,0 +1,19 @@
+{
+	"id": "adblock-fast",
+	"entry": "addon.js",
+	"name": "AdBlock-Fast",
+	"version": "1.2.3",
+	"description": "Configure and control the adblock-fast service: status, lists, schedule and DNS query log.",
+	"author": {
+		"name": "Stan Grishin",
+		"email": "stangri@melmac.ca"
+	},
+	"license": "AGPL-3.0-or-later",
+	"css": "style.css",
+	"files": ["addon.js", "style.css"],
+	"nav": {
+		"route": "/adblock-fast",
+		"label": "ADBLOCK",
+		"placement": "top"
+	}
+}
