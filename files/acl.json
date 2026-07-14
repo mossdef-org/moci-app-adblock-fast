@@ -1,5 +1,5 @@
 {
-	"moci-addon-adblock-fast": {
+	"moci-app-adblock-fast": {
 		"description": "MoCI add-on AdBlock-Fast: control the adblock-fast service and edit its config",
 		"read": {
 			"file": {

@@ -3,7 +3,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=moci-addon-adblock-fast
+PKG_NAME:=moci-app-adblock-fast
 PKG_VERSION:=1.2.4
 PKG_RELEASE:=4
 
@@ -13,7 +13,7 @@ PKG_LICENSE_FILES:=LICENSE
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/moci-addon-adblock-fast
+define Package/moci-app-adblock-fast
   SECTION:=admin
   CATEGORY:=Administration
   SUBMENU:=MoCI Add-ons
@@ -23,7 +23,7 @@ define Package/moci-addon-adblock-fast
   DEPENDS:=+moci +adblock-fast +rpcd-mod-ucode
 endef
 
-define Package/moci-addon-adblock-fast/description
+define Package/moci-app-adblock-fast/description
   MoCI add-on providing a web UI for the adblock-fast service.
   Ships its own rpcd ucode backend (ubus object moci.adblock-fast) and an
   rpcd ACL, so it drives adblock-fast without LuCI installed. The MoCI
@@ -33,7 +33,7 @@ endef
 define Build/Compile
 endef
 
-define Package/moci-addon-adblock-fast/install
+define Package/moci-app-adblock-fast/install
 	$(INSTALL_DIR) $(1)/www/moci/js/addons/adblock-fast
 	$(INSTALL_DATA) ./files/manifest.json $(1)/www/moci/js/addons/adblock-fast/manifest.json
 	$(INSTALL_DATA) ./files/addon.js $(1)/www/moci/js/addons/adblock-fast/addon.js
@@ -43,19 +43,19 @@ define Package/moci-addon-adblock-fast/install
 	$(INSTALL_DATA) ./files/moci.adblock-fast $(1)/usr/share/rpcd/ucode/moci.adblock-fast
 
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	$(INSTALL_DATA) ./files/acl.json $(1)/usr/share/rpcd/acl.d/moci-addon-adblock-fast.json
+	$(INSTALL_DATA) ./files/acl.json $(1)/usr/share/rpcd/acl.d/moci-app-adblock-fast.json
 endef
 
-define Package/moci-addon-adblock-fast/postinst
+define Package/moci-app-adblock-fast/postinst
 #!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || /etc/init.d/rpcd reload 2>/dev/null
 exit 0
 endef
 
-define Package/moci-addon-adblock-fast/postrm
+define Package/moci-app-adblock-fast/postrm
 #!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || /etc/init.d/rpcd reload 2>/dev/null
 exit 0
 endef
 
-$(eval $(call BuildPackage,moci-addon-adblock-fast))
+$(eval $(call BuildPackage,moci-app-adblock-fast))
